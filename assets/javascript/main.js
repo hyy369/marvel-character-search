@@ -5,7 +5,7 @@ function search() {
   var ts = new Date().getTime();
   var hash = md5(ts+PRIV_KEY + PUBLIC_KEY).toString();
   console.log(hash);
-  var url = 'http://gateway.marvel.com:80/v1/public/comics';
+  var url = 'https://gateway.marvel.com:80/v1/public/comics';
 
   var title = $('#seach_box').val();
   // var startYear = $('#startYear').val();
