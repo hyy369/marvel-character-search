@@ -63,7 +63,7 @@ strong.input-label{
 div.jumbotron {
 	background-image: url('../img/jumbotron.jpg');
 	background-repeat: no-repeat;
-	background-size: 100% 100%;
+	background-size: auto 100%;
 	background-position: 0px 0px;
 	height: 100vh;
 	width: 100%;
