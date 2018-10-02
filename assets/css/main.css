@@ -28,6 +28,7 @@ div.header {
     border: 1px solid #ddd; /* Add a grey border */
     border-radius: 15px;
     margin-bottom: 12px; /* Add some space below the input */
+    margin-top: 5vh;
 }
 
 table {
@@ -62,9 +63,9 @@ strong.input-label{
 
 div.jumbotron {
 	background-image: url('../img/jumbotron.jpg');
-	background-repeat: no-repeat;
-	background-size: auto 100%;
-	background-position: 0px 0px;
+	background-repeat: repeat;
+	background-size: 100% 100%;
+	background-position: center;
 	height: 100vh;
 	width: 100%;
 	padding-top: 30vh;
