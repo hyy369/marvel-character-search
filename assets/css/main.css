@@ -87,10 +87,18 @@ div.navbar {
 	margin-bottom: 0px;
 }
 
-p.lead {
+p.attribution {
 	color: white;
   font-size: 15px;
-  padding-top: 30vh;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+p.lead {
+	
 }
 
 img.icon-marvel-logo-svg {
