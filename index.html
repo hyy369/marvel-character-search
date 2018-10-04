@@ -15,19 +15,93 @@
 </head>
 <body>
 
-  <div class="jumbotron jumbotron-fluid" id="middle">
+  <div class="jumbotron jumbotron-fluid center">
       <div class="container">
-        <img class="icon-marvel-logo-svg" src="assets/img/marvel.svg"/><h1 class="display-3">Character Search</h1>
+
+        <img id="icon-marvel-logo-svg" src="assets/img/marvel.svg"/>
+        <h1 class="display-3">Character Search</h1>
         <p class="lead">Learn about one character in your favorite Marvel comic.</p>
-        <input type="text" id="search_box" placeholder="Type to search for characters..">
-        <button class="button" id="search_button" onclick="search()">Search</button>
+
+        <div class="search">
+          <input type="text" class="search_box" id="title_box" placeholder="Type the title of your favorite Marvel comic..">
+          <input type="text" class="search_box" id="initial_box" placeholder="Type initial letters of your favorite Marvel comic..">
+
+          <p class="left label">
+            <strong>Search by: </strong>
+            <input type="radio" name="search_type" id="title_radio" value="title" checked="checked" onchange="changeSearchType()">  Title
+            <input type="radio" name="search_type" id="initial_radio" value="initial" onchange="changeSearchType()">  Initial Letters
+             | <strong>Series start year:</strong>
+            <script language="JavaScript">
+              var time = new Date();
+              var year = time.getYear();
+              if (year < 1900) {
+              year = year + 1900;
+              }
+              var date = year+1; /*change the '101' to the number of years in the past you want to show */
+              document.writeln ("<select name=\"start_year\"><option value=\"\">All</option>");
+              do {
+                date--;
+                document.write ("<option value=\"" +date+"\">"+date+"</option>");
+              }
+              while (date > 1939);
+              document.write ("</select>");
+            </script>
+             | <strong>Order by: </strong>
+             <select name="order_by">
+               <option value="">Default</option>
+               <option value="Title">Title</option>
+               <option value="IssueNo">Issue Number</option>
+              </select>
+          </p>
+          <br>
+          <br>
+          <button class="button" id="search_button" onclick="search();">Search</button>
+
+        </div>
+
         <p class="attribution">Data provided by Marvel. © 2018 Marvel</p>
     </div>
   </div>
 
-  <div class="container">
-    <div id="result">
+<div class="container" id="result">
+  <div class="row">
+    <div class="col-md-4">
+      <img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"/>
+    </div>
+    <div class="col-md-8">
+      <h3>Angel (Warren Worthington III)</h3>
+      <h6>in <em>X-Men (2010) #40</em></h6>
+      <p class="description">No description available.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"/>
+    </div>
+    <div class="col-md-8">
+      <h3>Angel (Warren Worthington III)</h3>
+      <h6>in <em>X-Men (2010) #41</em></h6>
+      <p class="description">No description available.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg">
+    </div>
+    <div class="col-md-8">
+      <h3>Colossus</h3>
+      <h6>in <em>X-Men (2010) #35</em></h6>
+      <p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg"></div><div class="col-md-8"><h3>Colossus</h3><h6>in <em>X-Men (2010) #36</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg"></div><div class="col-md-8"><h3>Colossus</h3><h6>in <em>X-Men (2010) #37</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg"></div><div class="col-md-8"><h3>Colossus</h3><h6>in <em>X-Men (2010) #32</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg"></div><div class="col-md-8"><h3>Colossus</h3><h6>in <em>X-Men (2010) #33</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg"></div><div class="col-md-8"><h3>Colossus</h3><h6>in <em>X-Men (2010) #34</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg"></div><div class="col-md-8"><h3>Colossus</h3><h6>in <em>X-Men (2010) #31</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg"></div><div class="col-md-8"><h3>Colossus</h3><h6>in <em>X-Men (2010) #30</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/d/50/50febb79985ee.jpg"></div><div class="col-md-8"><h3>Daredevil</h3><h6>in <em>X-Men (2010) #38</em></h6><p class="description">Abandoned by his mother, Matt Murdock was raised by his father, boxer "Battling Jack" Murdock, in Hell's Kitchen. Realizing that rules were needed to prevent people from behaving badly, young Matt decided to study law; however, when he saved a man from an oncoming truck, it spilled a radioactive cargo that rendered Matt blind while enhancing his remaining senses. Under the harsh tutelage of blind martial arts master Stick, Matt mastered his heightened senses and became a formidable fighter.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/d/50/50febb79985ee.jpg"></div><div class="col-md-8"><h3>Daredevil</h3><h6>in <em>X-Men (2010) #39</em></h6><p class="description">Abandoned by his mother, Matt Murdock was raised by his father, boxer "Battling Jack" Murdock, in Hell's Kitchen. Realizing that rules were needed to prevent people from behaving badly, young Matt decided to study law; however, when he saved a man from an oncoming truck, it spilled a radioactive cargo that rendered Matt blind while enhancing his remaining senses. Under the harsh tutelage of blind martial arts master Stick, Matt mastered his heightened senses and became a formidable fighter.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/9/20/5102c774ebae7.jpg"></div><div class="col-md-8"><h3>Avengers</h3><h6>in <em>X-Men (2010) #27 (Avengers Art Appreciation Variant)</em></h6><p class="description">Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle. With a roster that has included Captain America, Iron Man, Ant-Man, Hulk, Thor, Wasp and dozens more over the years, the Avengers have come to be regarded as Earth's No. 1 team.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg"></div><div class="col-md-8"><h3>Colossus</h3><h6>in <em>X-Men (2010) #26</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg"></div><div class="col-md-8"><h3>Colossus</h3><h6>in <em>X-Men (2010) #25</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg"></div><div class="col-md-8"><h3>Colossus</h3><h6>in <em>X-Men (2010) #27</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg"></div><div class="col-md-8"><h3>Colossus</h3><h6>in <em>X-Men (2010) #28</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg"></div><div class="col-md-8"><h3>Colossus</h3><h6>in <em>X-Men (2010) #29</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg"></div><div class="col-md-8"><h3>Colossus</h3><h6>in <em>X-Men (2010) #24</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg"></div><div class="col-md-8"><h3>Colossus</h3><h6>in <em>X-Men (2010) #23</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg"></div><div class="col-md-8"><h3>Colossus</h3><h6>in <em>X-Men (2010) #21</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg"></div><div class="col-md-8"><h3>Colossus</h3><h6>in <em>X-Men (2010) #22</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg"></div><div class="col-md-8"><h3>Colossus</h3><h6>in <em>X-Men (2010) #20</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg"></div><div class="col-md-8"><h3>Colossus</h3><h6>in <em>X-Men (2010) #20 (Keown Variant)</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/70/526547e2d90ad.jpg"></div><div class="col-md-8"><h3>Cyclops</h3><h6>in <em>X-Men (2010) #19 (Mc 50th Anniversary Variant)</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/3/60/53176bb096d17.jpg"></div><div class="col-md-8"><h3>Doctor Doom</h3><h6>in <em>X-Men (2010) #16 (2nd Printing Variant)</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/70/526547e2d90ad.jpg"></div><div class="col-md-8"><h3>Cyclops</h3><h6>in <em>X-Men (2010) #18</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/70/526547e2d90ad.jpg"></div><div class="col-md-8"><h3>Cyclops</h3><h6>in <em>X-Men (2010) #19</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/8/03/510c08f345938.jpg"></div><div class="col-md-8"><h3>X-Men</h3><h6>in <em>X-Men (2010) #18 (Architect Sketch Variant)</em></h6><p class="description">Feared and hated by humans because they're different, the X-Men are heroic mutants, individuals born with special powers who've sworn to use their gifts to protect mutants as well as humans.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/9/60/50febc4f55525.jpg"></div><div class="col-md-8"><h3>Fantastic Four</h3><h6>in <em>X-Men (2010) #18 (Architect Variant)</em></h6><p class="description">After being exposed to cosmic rays, Reed Richards, Susan Storm, Ben Grimm and Johnny Storm found they had amazing new powers. Reed Richards found he has the ability to stretch his body in any way he wanted, while Susan Storm can turn herself, objects and other people invisible. Ben Grimm transformed into a rocky, super-strong behemoth and Johnny Storm has the ability to set himself on fire. Dubbed the Fantastic Four, Mr. Fantastic, Invisible Woman, Thing and the Human Torch are Marvel's First Family.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/3/60/53176bb096d17.jpg"></div><div class="col-md-8"><h3>Doctor Doom</h3><h6>in <em>X-Men (2010) #17</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/3/60/53176bb096d17.jpg"></div><div class="col-md-8"><h3>Doctor Doom</h3><h6>in <em>X-Men (2010) #16</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/70/526547e2d90ad.jpg"></div><div class="col-md-8"><h3>Cyclops</h3><h6>in <em>X-Men (2010) #15.1</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/9/80/51151ef7cf4c8.jpg"></div><div class="col-md-8"><h3>Emma Frost</h3><h6>in <em>X-Men (2010) #14</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/9/80/51151ef7cf4c8.jpg"></div><div class="col-md-8"><h3>Emma Frost</h3><h6>in <em>X-Men (2010) #14 (Medina Variant)</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/9/80/51151ef7cf4c8.jpg"></div><div class="col-md-8"><h3>Emma Frost</h3><h6>in <em>X-Men (2010) #14 (I Am Captain America Variant)</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/8/03/510c08f345938.jpg"></div><div class="col-md-8"><h3>X-Men</h3><h6>in <em>X-Men (2010) #15</em></h6><p class="description">Feared and hated by humans because they're different, the X-Men are heroic mutants, individuals born with special powers who've sworn to use their gifts to protect mutants as well as humans.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/8/03/510c08f345938.jpg"></div><div class="col-md-8"><h3>X-Men</h3><h6>in <em>X-Men (2010) #15 (Medina Variant)</em></h6><p class="description">Feared and hated by humans because they're different, the X-Men are heroic mutants, individuals born with special powers who've sworn to use their gifts to protect mutants as well as humans.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/8/03/526165ed93180.jpg"></div><div class="col-md-8"><h3>Archangel</h3><h6>in <em>X-Men (2010) #13 (Medina Variant)</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/8/03/526165ed93180.jpg"></div><div class="col-md-8"><h3>Archangel</h3><h6>in <em>X-Men (2010) #12 (Medina Variant)</em></h6><p class="description">No description available.</p></div></div><div class="row"><div class="col-md-4"><img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/8/03/526165ed93180.jpg"></div><div class="col-md-8"><h3>Archangel</h3><h6>in <em>X-Men (2010) #13</em></h6><p class="description">No description available.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container page_control">
+    <div class="row">
+      <div class="col-md-12">
+        <a id="prev" href="javascript:prev();">Previous Page</a> | <a id="next" href="javascript:next();">Next Page</a>
+      </div>
     </div>
   </div>
 </body>
+  <script src="assets/javascript/page.js"></script>
 </html>
