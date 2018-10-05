@@ -40,14 +40,18 @@ function search()
   if (order_by) {query.orderBy = order_by;}
 
   // Scroll to result div and display search status
-  $([document.documentElement, document.body]).animate({scrollTop: $("#result").offset().top}, 2000);
-  $('#result').empty().append('<div class="row center"><h1>Searching...</h1></div>');
+  $('#result').empty();
+  $('#result_header').empty().append('<div class="row center"><h1>Searching...</h1></div>');
+  $([document.documentElement, document.body]).animate({scrollTop: $("#result_header").offset().top}, 2000);
 
   // Establish API call
   $.getJSON(comics_url, query)
   .done(function(data)
   {
-    $('#result').empty();
+    $('#result_header').empty().append('<div class="row center"><h1>Search results</h1></div>');
+    $('#sep').hide();
+    $('#prev').hide();
+    $('#page_control').show();
     for (var i = 0; i < data.data.count; i++)
     {
       if (data.data.results[i].characters.returned > 0)
@@ -59,7 +63,7 @@ function search()
     }
     if (COUNT === 0)
     {
-      $('#result').append('<div class="row center"><h1>Sorry. No matching results was found.</h1></div>');
+      $('#result_header').append('<div class="row center"><h2>Sorry. No matching results was found.</h2></div>');
     }
   })
   .fail(function(err)
@@ -85,7 +89,7 @@ function getChar(name, title)
     var description = data.data.results[0].description ? data.data.results[0].description : 'No description available.';
     $('#result').append
     (
-      '<div class="row"><div class="col-md-4">'+
+      '<div class="row result-row"><div class="col-md-4">'+
       '<img class="thumbnail" src="'+data.data.results[0].thumbnail.path +'.'+ data.data.results[0].thumbnail.extension+'"/></div>'+
       '<div class="col-md-8"><h3>'+data.data.results[0].name+'</h3>'+
       '<h6>in <em>'+title+'</em></h6>'+

@@ -1,6 +1,12 @@
 var $el = $('#result > div');
 var pageSize = 10;
-slicePage();
+// slicePage();
+
+function toggleMore()
+{
+  $('#more_options').show();
+  $('#toggle_options').hide();
+}
 
 function slicePage()
 {
@@ -26,10 +32,16 @@ var slice = [0, pageSize];
 
 function next()
 {
-   if (slice[1] < $el.length ){
-     slice = slice.map(addSlice);
-   }
-   showSlice(slice);
+  if (slice[1] < $el.length ){
+    slice = slice.map(addSlice);
+  }
+  $('#next').hide();
+  $('#prev').hide();
+  $('#sep').hide();
+  if (slice[0] > 0) {$('#prev').show();}
+  if (slice[1] < $el.length ) {$('#next').show();}
+  if ($('#prev').is(":visible") && $('#next').is(":visible")) {$('#sep').show();}
+  showSlice(slice);
 }
 
 function prev()
@@ -37,12 +49,17 @@ function prev()
   if (slice[0] > 0 ){
     slice = slice.map(subtractSlice);
   }
+  $('#next').hide();
+  $('#prev').hide();
+  if (slice[0] > 0) {$('#prev').show();}
+  if (slice[1] < $el.length ) {$('#next').show();}
+  if ($('#prev').is(":visible") && $('#next').is(":visible")) {$('#sep').show();}
   showSlice(slice);
 }
 
 function showSlice(slice)
 {
-  $([document.documentElement, document.body]).animate({scrollTop: $("#result").offset().top}, 1000);
+  $([document.documentElement, document.body]).animate({scrollTop: $("#result_header").offset().top}, 1000);
   $el.css('display', 'none');
   $el.slice(slice[0], slice[1]).css('display','block');
 }

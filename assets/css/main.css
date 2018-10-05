@@ -25,12 +25,14 @@ div.jumbotron {
 	min-height: 600px;
 	width: 100%;
 	padding-top: 20vh;
-	/* padding-bottom: 30vh; */
+	margin-bottom: 0;
 	color: white;
 }
 
-div.page_control{
-	text-align: center;
+div.result-row {
+	border-top-style: solid;
+	border-top-color: #DDDDDD;
+	border-top-width: 1px;
 }
 
 div.search {
@@ -49,6 +51,7 @@ img {
 img.thumbnail {
 	width: 256px;
 	display: inline-block;
+	margin-top: 20px;
 }
 
 p.attribution {
@@ -80,8 +83,9 @@ strong.input-label {
 .search_box {
     background-image: url('../img/searchIcon.png'); /* Add a search icon to input */
 		background-position: 10px 12px;
-    background-repeat: no-repeat; /* Do not repeat the icon image */
-    width: 60%; /* Full-width */
+    background-repeat: no-repeat;
+    width: 100%;
+		max-width: 800px;
     font-size: 16px; /* Increase font-size */
     color: black;
     padding: 12px 20px 12px 40px; /* Add some padding */
@@ -99,4 +103,20 @@ strong.input-label {
 /* display: block; */
 width: 200px;
 height: 78px;
+}
+
+#more_options {
+	display: none;
+}
+
+#page_control {
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	display: none;
+}
+
+
+#toggle_options {
+	color: white;
 }

@@ -30,40 +30,43 @@
           <strong>Search by: </strong>
           <input type="radio" name="search_type" id="title_radio" value="title" checked="checked" onchange="changeSearchType()">  Title
           <input type="radio" name="search_type" id="initial_radio" value="initial" onchange="changeSearchType()">  Initial Letter
-           | <strong>Series start year:</strong>
-          <script language="JavaScript">
-            var time = new Date();
-            var year = time.getYear();
-            if (year < 1900) {
-            year = year + 1900;
-            }
-            var date = year+1; /*change the '101' to the number of years in the past you want to show */
-            document.writeln ("<select name=\"start_year\"><option value=\"\">All</option>");
-            do {
-              date--;
-              document.write ("<option value=\"" +date+"\">"+date+"</option>");
-            }
-            while (date > 1939);
-            document.write ("</select>");
-          </script>
-          | <strong>Issue format: </strong>
-          <select name="format">
-            <option value="">All</option>
-            <option value="comic">Comic</option>
-            <option value="magazine">Magazine</option>
-            <option value="trade paperback">Trade paperback</option>
-            <option value="hardcover">Hardcover</option>
-            <option value="digest">Digest</option>
-            <option value="graphic novel">Graphic novel</option>
-            <option value="digital comic">Digital comic</option>
-            <option value="infinite comic">Infinite comic</option>
-           </select>
-           | <strong>Order by: </strong>
-           <select name="order_by">
-             <option value="">Default</option>
-             <option value="title">Title</option>
-             <option value="issueNumber">Issue Number</option>
+          <span> | <a href="javascript:toggleMore();" id="toggle_options">More options..</a></span>
+          <span id="more_options">
+            <strong>Series start year:</strong>
+            <script language="JavaScript">
+              var time = new Date();
+              var year = time.getYear();
+              if (year < 1900) {
+              year = year + 1900;
+              }
+              var date = year+1; /*change the '101' to the number of years in the past you want to show */
+              document.writeln ("<select name=\"start_year\"><option value=\"\">All</option>");
+              do {
+                date--;
+                document.write ("<option value=\"" +date+"\">"+date+"</option>");
+              }
+              while (date > 1939);
+              document.write ("</select>");
+            </script>
+             | <strong>Issue format: </strong>
+            <select name="format">
+              <option value="">All</option>
+              <option value="comic">Comic</option>
+              <option value="magazine">Magazine</option>
+              <option value="trade paperback">Trade paperback</option>
+              <option value="hardcover">Hardcover</option>
+              <option value="digest">Digest</option>
+              <option value="graphic novel">Graphic novel</option>
+              <option value="digital comic">Digital comic</option>
+              <option value="infinite comic">Infinite comic</option>
             </select>
+             | <strong>Order by: </strong>
+            <select name="order_by">
+              <option value="">Default</option>
+              <option value="title">Title</option>
+              <option value="issueNumber">Issue Number</option>
+            </select>
+          </span>
         </p>
         <br>
         <br>
@@ -71,58 +74,20 @@
 
       </div>
 
-      <p class="attribution">Data provided by Marvel. © 2018 Marvel</p>
+      <p class="attribution">Created by <a href="https://hyy369.com/">Yangyang He</a> | Data provided by Marvel. © 2018 Marvel</p>
     </div>
   </div>
-
+  <div class="container" id="result_header">
+  </div>
+  
   <div class="container" id="result">
-    <!-- <div class="row">
-      <div class="col-md-4">
-        <img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"/>
-      </div>
-      <div class="col-md-8">
-        <h3>Angel (Warren Worthington III)</h3>
-        <h6>in <em>X-Men (2010) #40</em></h6>
-        <p class="description">No description available.</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4">
-        <img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"/>
-      </div>
-      <div class="col-md-8">
-        <h3>Angel (Warren Worthington III)</h3>
-        <h6>in <em>X-Men (2010) #41</em></h6>
-        <p class="description">No description available.</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4">
-        <img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg">
-      </div>
-      <div class="col-md-8">
-        <h3>Colossus</h3>
-        <h6>in <em>X-Men (2010) #35</em></h6>
-        <p class="description">No description available.</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4">
-        <img class="thumbnail" src="http://i.annihil.us/u/prod/marvel/i/mg/6/e0/51127cf4b996f.jpg">
-      </div>
-      <div class="col-md-8">
-        <h3>Colossus</h3>
-        <h6>in <em>X-Men (2010) #36</em></h6>
-        <p class="description">No description available.</p>
-      </div>
-    </div> -->
   </div>
 
-  <div class="container page_control">
+  <div class="container" id="page_control">
     <div class="row">
-      <div class="col-md-12">
-        <a id="prev" href="javascript:prev();">Previous Page</a> | <a id="next" href="javascript:next();">Next Page</a>
-      </div>
+      <p>
+        <a id="prev" href="javascript:prev();">Previous Page</a><span id="sep"> | </span><a id="next" href="javascript:next();">Next Page</a>
+      </p>
     </div>
   </div>
 </body>
