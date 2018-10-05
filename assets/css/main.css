@@ -1,11 +1,12 @@
 button.button {
-	padding-top: 30px;
   color: white;
-  padding: 10px 10px 10px 10px;
+  padding: 5px 10px 5px 10px;
   background-color: #F0131E;
   border: none;
   border-radius: 5px;
   text-decoration: none;
+	font-size: 16px;
+	margin-bottom: 0px;
 }
 
 div.col-md-4 {
@@ -19,11 +20,9 @@ div.header {
 div.jumbotron {
 	background-image: url('../img/jumbotron.jpg');
 	background-repeat: repeat;
-	background-size: 100% 100%;
 	background-position: center;
 	height: 100vh;
-	min-height: 600px;
-	width: 100%;
+	width: 100vw;
 	padding-top: 20vh;
 	margin-bottom: 0;
 	color: white;
