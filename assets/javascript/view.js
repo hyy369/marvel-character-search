@@ -35,12 +35,7 @@ function next()
   if (slice[1] < $el.length ){
     slice = slice.map(addSlice);
   }
-  $('#next').hide();
-  $('#prev').hide();
-  $('#sep').hide();
-  if (slice[0] > 0) {$('#prev').show();}
-  if (slice[1] < $el.length ) {$('#next').show();}
-  if ($('#prev').is(":visible") && $('#next').is(":visible")) {$('#sep').show();}
+  showControl();
   showSlice(slice);
 }
 
@@ -49,12 +44,17 @@ function prev()
   if (slice[0] > 0 ){
     slice = slice.map(subtractSlice);
   }
+  showControl();
+  showSlice(slice);
+}
+
+function showControl() {
   $('#next').hide();
   $('#prev').hide();
+  $('#sep').hide();
   if (slice[0] > 0) {$('#prev').show();}
   if (slice[1] < $el.length ) {$('#next').show();}
   if ($('#prev').is(":visible") && $('#next').is(":visible")) {$('#sep').show();}
-  showSlice(slice);
 }
 
 function showSlice(slice)

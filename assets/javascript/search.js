@@ -49,9 +49,6 @@ function search()
   .done(function(data)
   {
     $('#result_header').empty().append('<div class="row center"><h1>Search results</h1></div>');
-    $('#sep').hide();
-    $('#prev').hide();
-    $('#page_control').show();
     for (var i = 0; i < data.data.count; i++)
     {
       if (data.data.results[i].characters.returned > 0)
@@ -63,7 +60,8 @@ function search()
     }
     if (COUNT === 0)
     {
-      $('#result_header').append('<div class="row center"><h2>Sorry. No matching results was found.</h2></div>');
+      $('#result_header').empty();
+      $('#result_header').append('<div class="row center"><h2>Sorry. No matching result was found.</h2></div>');
     }
   })
   .fail(function(err)
@@ -97,6 +95,8 @@ function getChar(name, title)
       '</p></div></div>\n'
     );
     slicePage();
+    $('#page_control').show();
+    showControl();
   })
   .fail(function(err){console.log(err);})
 }
