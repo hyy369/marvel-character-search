@@ -67,6 +67,7 @@ function search()
   .fail(function(err)
   {
     console.log(err);
+    alert("Server side error.");
   })
 }
 
@@ -98,7 +99,10 @@ function getChar(name, title)
     $('#page_control').show();
     showControl();
   })
-  .fail(function(err){console.log(err);})
+  .fail(function(err){
+    console.log(err);
+    alert("Server side error.");
+  })
 }
 
 function sort_name (a, b)
